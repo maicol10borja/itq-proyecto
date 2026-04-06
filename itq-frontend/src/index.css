@@ -171,3 +171,84 @@ input:focus, select:focus {
   border-radius: 4px;
   font-size: 13px;
 }
+
+/* ========================================================
+   RESPONSIVO / MOBILE LAYOUT
+======================================================== */
+.layout-container {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg-main);
+  flex-direction: row;
+}
+
+.sidebar {
+  width: 260px;
+  background: #0a0a0a;
+  border-right: 1px solid #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: 50;
+}
+
+.main-content {
+  flex: 1;
+  overflow: auto;
+  position: relative;
+  width: calc(100% - 260px);
+}
+
+.mobile-toggle {
+  display: none;
+}
+
+.sidebar-overlay {
+  display: none;
+}
+
+/* Teléfonos y Tablets Verticales */
+@media (max-width: 768px) {
+  .layout-container {
+    flex-direction: column;
+  }
+  .sidebar {
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    transform: translateX(-100%);
+  }
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  .main-content {
+    width: 100%;
+  }
+  .mobile-toggle {
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
+    background: #0a0a0a;
+    border-bottom: 1px solid #1a1a1a;
+    position: sticky;
+    top: 0;
+    z-index: 40;
+  }
+  .sidebar-overlay {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(2px);
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 40;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+  }
+  .sidebar-overlay.open {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
