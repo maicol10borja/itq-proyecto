@@ -1,0 +1,1 @@
+package ec.itq.backend.dto; public class AuthResponse { public Long id; public String nombre; public String rol; public String token; }
