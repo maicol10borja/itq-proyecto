@@ -31,7 +31,7 @@ export default function PublicObraPage() {
 
   return (
     <div style={{ padding:40, background:'#050505', minHeight:'100vh', display:'flex', alignItems:'center', justifyContent:'center' }}>
-      <div className="card animate-fade" style={{ maxWidth:600, width:'100%', padding:40, position:'relative', overflow:'hidden' }}>
+      <div className="card animate-fade page-padding" style={{ maxWidth:600, width:'100%', padding:40, position:'relative', overflow:'hidden' }}>
         <div style={{ position:'absolute', top:0, left:0, height:4, width:'100%', background: obra.estadoActual === 'Publicado' ? 'var(--success)' : 'var(--warning)' }}></div>
         
         <div style={{ textAlign:'center', marginBottom:32 }}>
@@ -47,7 +47,7 @@ export default function PublicObraPage() {
             </div>
           </div>
           
-          <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16 }}>
+          <div className="responsive-grid" style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16 }}>
             <div>
               <div style={{ fontSize:10, color:'#666', textTransform:'uppercase', letterSpacing:1 }}>Autor</div>
               <div style={{ fontSize:14, color:'#e5e5e5', marginTop:4 }}>{obra.autor}</div>

@@ -111,7 +111,7 @@ export default function InventarioPage() {
                      </td>
                      <td style={{ padding:'16px', fontSize:13, color:'#e5e5e5' }}>{obras.find(o=>o.idObra===t.idObra)?.titulo || t.idObra}</td>
                      <td style={{ padding:'16px', fontSize:14 }}>{t.cantidad} <span style={{fontSize:10, color:'#666'}}>ud.</span></td>
-                     <td style={{ padding:'16px', fontSize:13, fontFamily:'monospace', color:'#fff' }}>${parseFloat(t.precioUnitario).toFixed(2)}</td>
+                     <td style={{ padding:'16px', fontSize:13, fontFamily:'monospace', color:'#fff' }}>${parseFloat(t.precioUnitario || t.monto || 0).toFixed(2)}</td>
                    </tr>
                  ))}
                  {transacciones.length===0 && <tr><td colSpan={4} style={{padding:40, textAlign:'center', color:'#555', fontSize:14}}>Bodega sin movimientos.</td></tr>}
