@@ -21,7 +21,7 @@ export default function ObrasPage() {
 
   return (
     <div className="animate-fade page-padding">
-      <div className="responsive-card" style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-end', marginBottom:32, padding:0 }}>
+      <div className="responsive-card mobile-header-stack" style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-end', marginBottom:32, padding:0 }}>
         <div>
           <h1 className="serif" style={{ fontSize:32, color:'#fff', marginBottom:8 }}>Auditoría de Obras</h1>
           <p style={{ color:'#888', fontSize:14 }}>Gestión técnica del repositorio literario</p>

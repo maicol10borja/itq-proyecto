@@ -32,13 +32,13 @@ export default function CostosPage() {
   }
 
   return (
-    <div style={{ padding:40 }} className="animate-fade">
+    <div className="animate-fade page-padding">
       <div style={{ marginBottom:32 }}>
         <h1 className="serif" style={{ fontSize:32, color:'#fff', marginBottom:8 }}>Contabilidad de Costos</h1>
         <p style={{ color:'#888', fontSize:14 }}>Método Costo Promedio Ponderado · Motor Analítico</p>
       </div>
 
-      <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(400px, 1fr))', gap:32 }}>
+      <div className="responsive-grid" style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(400px, 1fr))', gap:32 }}>
         <div className="card" style={{ padding:32 }}>
           <div style={{ display:'flex', alignItems:'center', gap:12, marginBottom:20 }}>
             <div style={{ width:40, height:40, background:'#111', borderRadius:8, display:'flex', alignItems:'center', justifyContent:'center', border:'1px solid #333' }}>📈</div>
@@ -57,7 +57,7 @@ export default function CostosPage() {
               </select>
             </div>
 
-            <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:12, marginBottom:24 }}>
+            <div className="responsive-grid" style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:12, marginBottom:24 }}>
               {[
                 ['Stock actual', 'stockActual', 'number'],
                 ['Costo anterior ($)', 'costoAnterior', 'number'],

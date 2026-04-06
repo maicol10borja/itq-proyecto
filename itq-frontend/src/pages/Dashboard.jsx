@@ -45,7 +45,7 @@ export default function Dashboard() {
           </div>
           <div style={{ padding: 20 }}>
             {obras.slice(-4).reverse().map(o => (
-              <div key={o.idObra} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 0', borderBottom: '1px solid #222' }}>
+              <div key={o.idObra} className="flex-wrap-mobile" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 0', borderBottom: '1px solid #222' }}>
                 <div>
                   <div style={{ fontSize: 14, fontWeight: 500, color: '#e5e5e5' }}>{o.titulo}</div>
                   <div style={{ fontSize: 12, color: '#666', marginTop: 4 }}>{o.autor} • {o.carreraRelacionada}</div>
@@ -69,7 +69,7 @@ export default function Dashboard() {
                 Toda la biblioteca cuenta con stock disponible.
               </div>
             ) : sinStock.map(o => (
-              <div key={o.idObra} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 0', borderBottom: '1px solid #222' }}>
+              <div key={o.idObra} className="flex-wrap-mobile" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 0', borderBottom: '1px solid #222' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                   <div style={{ width: 8, height: 8, borderRadius: 4, background: 'var(--danger)' }}></div>
                   <div>

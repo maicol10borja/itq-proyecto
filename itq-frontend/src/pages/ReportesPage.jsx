@@ -10,13 +10,13 @@ export default function ReportesPage() {
   }, [])
 
   return (
-    <div style={{ padding:40, background: '#050505' }}>
-      <div style={{ marginBottom:32, display:'flex', justifyContent:'space-between', alignItems:'flex-end' }}>
+    <div className="animate-fade page-padding" style={{ background: '#050505' }}>
+      <div className="mobile-header-stack" style={{ marginBottom:32, display:'flex', justifyContent:'space-between', alignItems:'flex-end' }}>
         <div>
           <h1 className="serif" style={{ fontSize:32, color:'#fff', marginBottom:8 }}>Reportes Gerenciales y Análisis</h1>
           <p style={{ color:'#888', fontSize:14 }}>Instituto Superior Tecnológico Quito</p>
         </div>
-        <div style={{ display:'flex', gap:10 }}>
+        <div className="mobile-tabs" style={{ display:'flex', gap:10 }}>
           <button className={`btn ${tab==='swot'?'':'btn-ghost'}`} onClick={()=>setTab('swot')}>Análisis SWOT</button>
           <button className={`btn ${tab==='inv'?'':'btn-ghost'}`} onClick={()=>setTab('inv')}>Inventarios y Demandas</button>
         </div>
@@ -32,7 +32,7 @@ export default function ReportesPage() {
             </p>
           </div>
 
-          <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:24 }}>
+          <div className="responsive-grid" style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:24 }}>
             <div className="card" style={{ padding:24, borderTop:'3px solid var(--success)' }}>
               <div style={{ display:'flex', alignItems:'center', gap:12, marginBottom:16 }}>
                 <div style={{ background:'rgba(46, 213, 115, 0.1)', color:'var(--success)', padding:'8px 12px', borderRadius:8, fontWeight:700 }}>S</div>
@@ -85,7 +85,7 @@ export default function ReportesPage() {
       {tab === 'inv' && (
         <div className="card animate-fade" style={{ padding:32 }}>
           <h2 className="serif" style={{ fontSize:22, color:'#fff', marginBottom:20 }}>Reporte Analítico: Costos e Inventario Restock</h2>
-          <table style={{ width:'100%', borderCollapse:'collapse', textAlign:'left', color:'#aaa', fontSize:14 }}>
+          <div className="table-wrapper"><table style={{ width:'100%', borderCollapse:'collapse', textAlign:'left', color:'#aaa', fontSize:14 }}>
             <thead>
               <tr style={{ borderBottom:'1px solid #222', color:'#fff' }}>
                 <th style={{ padding:12 }}>Fecha</th>
@@ -108,7 +108,7 @@ export default function ReportesPage() {
                 </tr>
               ))}
             </tbody>
-          </table>
+          </table></div>
           {transacciones.length===0 && <div style={{padding:20, textAlign:'center'}}>Sin data para reporte.</div>}
           <div style={{ marginTop:24, textAlign:'right' }}>
              <button className="btn btn-ghost" onClick={()=>window.print()}>🖨️ Exportar Documento PDF</button>

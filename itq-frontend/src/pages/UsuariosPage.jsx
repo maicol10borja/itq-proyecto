@@ -32,13 +32,13 @@ export default function UsuariosPage() {
   }
 
   return (
-    <div style={{ padding:40 }} className="animate-fade">
+    <div className="animate-fade page-padding">
       <div style={{ marginBottom:32 }}>
         <h1 className="serif" style={{ fontSize:32, color:'#fff', marginBottom:8 }}>Gestión de Personal y Cuentas</h1>
         <p style={{ color:'#888', fontSize:14 }}>Administración de Accesos al Repositorio TI</p>
       </div>
 
-      <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(360px, 1fr))', gap:32 }}>
+      <div className="responsive-grid" style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(360px, 1fr))', gap:32 }}>
         
         <div className="card" style={{ padding:32, alignSelf:'start' }}>
           <div style={{ display:'flex', alignItems:'center', gap:12, marginBottom:20 }}>
@@ -59,7 +59,7 @@ export default function UsuariosPage() {
                 <label className="styled-label">Correo Institucional</label>
                 <input className="styled-input" type="email" required value={form.email} onChange={e=>setForm({...form, email:e.target.value})} />
               </div>
-              <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:12 }}>
+              <div className="responsive-grid" style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:12 }}>
                 <div>
                   <label className="styled-label">Contraseña</label>
                   <input className="styled-input" type="password" required value={form.password} onChange={e=>setForm({...form, password:e.target.value})} />
@@ -87,7 +87,7 @@ export default function UsuariosPage() {
            </div>
            <div style={{ padding:20, display:'flex', flexDirection:'column', gap:12 }}>
              {usuarios.map(u => (
-               <div key={u.idUsuario} style={{ display:'flex', justifyContent:'space-between', alignItems:'center', padding:'16px', background:'rgba(255,255,255,0.02)', border:'1px solid #222', borderRadius:8 }}>
+               <div key={u.idUsuario} className="flex-wrap-mobile" style={{ display:'flex', justifyContent:'space-between', alignItems:'center', padding:'16px', background:'rgba(255,255,255,0.02)', border:'1px solid #222', borderRadius:8 }}>
                  <div>
                    <h4 style={{ margin:0, color:'#fff', fontSize:14 }}>{u.nombre}</h4>
                    <p style={{ margin:0, color:'#888', fontSize:12, marginTop:4 }}>{u.email}</p>

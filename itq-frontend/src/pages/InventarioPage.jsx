@@ -39,13 +39,13 @@ export default function InventarioPage() {
   }
 
   return (
-    <div style={{ padding:40 }} className="animate-fade">
+    <div className="animate-fade page-padding">
       <div style={{ marginBottom:32 }}>
         <h1 className="serif" style={{ fontSize:32, color:'#fff', marginBottom:8 }}>Bodega e Inventario</h1>
         <p style={{ color:'#888', fontSize:14 }}>Registro de entradas y salidas de obras</p>
       </div>
 
-      <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(360px, 1fr))', gap:32 }}>
+      <div className="responsive-grid" style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(360px, 1fr))', gap:32 }}>
         
         <div className="card" style={{ padding:0, alignSelf:'start' }}>
           <div style={{ display:'flex', borderBottom:'1px solid #222' }}>
@@ -62,7 +62,7 @@ export default function InventarioPage() {
                   {obras.map(o=><option key={o.idObra} value={o.idObra}>{o.titulo} (Stock local: {o.stock})</option>)}
                 </select>
               </div>
-              <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:12, marginBottom:24 }}>
+              <div className="responsive-grid" style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:12, marginBottom:24 }}>
                 <div>
                   <label className="styled-label">Cantidad (Uds.)</label>
                   <input className="styled-input" type="number" min="1" value={form.cantidad} onChange={e=>setForm({...form, cantidad:e.target.value})} required />

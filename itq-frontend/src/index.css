@@ -199,7 +199,36 @@ input:focus, select:focus {
   .responsive-grid {
     grid-template-columns: 1fr !important;
   }
+  .mobile-header-stack {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+  }
+  .mobile-header-stack > div {
+    width: 100%;
+  }
+  .mobile-tabs {
+    flex-direction: column !important;
+  }
+  .mobile-tabs button {
+    width: 100% !important;
+    justify-content: center;
+  }
+  .flex-wrap-mobile {
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+  }
+  .flex-wrap-mobile > div:first-child {
+    min-width: 100% !important;
+  }
 }
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 
 /* ========================================================
    RESPONSIVO / MOBILE LAYOUT

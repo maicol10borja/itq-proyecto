@@ -19,13 +19,13 @@ export default function ValidacionPage() {
   }
 
   return (
-    <div style={{ padding:40, maxWidth:1200, margin:'0 auto' }} className="animate-fade">
+    <div style={{ maxWidth:1200, margin:'0 auto' }} className="animate-fade page-padding">
       <div style={{ marginBottom:32 }}>
         <h1 className="serif" style={{ fontSize:32, color:'#fff', marginBottom:8 }}>Validación Académica</h1>
         <p style={{ color:'#888', fontSize:14 }}>Sistemas de validación estructural para publicaciones y registros literarios.</p>
       </div>
       
-      <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(400px, 1fr))', gap:32 }}>
+      <div className="responsive-grid" style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(400px, 1fr))', gap:32 }}>
 
         {/* ISBN */}
         <div className="card" style={{ padding:32 }}>
@@ -62,7 +62,7 @@ export default function ValidacionPage() {
           </div>
           
           <form onSubmit={validarAPA}>
-            <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:12, marginBottom:12 }}>
+            <div className="responsive-grid" style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:12, marginBottom:12 }}>
               <div>
                 <label className="styled-label">Autor (Apellido, N.)</label>
                 <input className="styled-input" value={apa.autor} onChange={e => setApa({...apa, autor:e.target.value})} required />
@@ -76,7 +76,7 @@ export default function ValidacionPage() {
               <label className="styled-label">Título de la Obra</label>
               <input className="styled-input" value={apa.titulo} onChange={e => setApa({...apa, titulo:e.target.value})} required />
             </div>
-            <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:12, marginBottom:24 }}>
+            <div className="responsive-grid" style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:12, marginBottom:24 }}>
               <div>
                 <label className="styled-label">Editorial</label>
                 <input className="styled-input" value={apa.editorial} onChange={e => setApa({...apa, editorial:e.target.value})} />
