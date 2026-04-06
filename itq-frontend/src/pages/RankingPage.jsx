@@ -13,7 +13,7 @@ export default function RankingPage() {
   }, [])
 
   return (
-    <div style={{ padding:40, maxWidth:900, margin:'0 auto' }} className="animate-fade">
+    <div style={{ maxWidth:900, margin:'0 auto' }} className="animate-fade page-padding">
       <div style={{ textAlign:'center', marginBottom:48 }}>
         <div style={{ fontSize:48, marginBottom:16 }}>🏆</div>
         <h1 className="serif" style={{ fontSize:36, color:'#fff', marginBottom:8 }}>Ranking Literario ITQ</h1>
@@ -22,8 +22,7 @@ export default function RankingPage() {
 
       <div style={{ display:'flex', flexDirection:'column', gap:20 }}>
         {obras.map((o, idx) => (
-          <div key={o.idObra} className="card" style={{
-            display:'flex', alignItems:'center', padding:'24px 32px',
+          <div key={o.idObra} className="card responsive-card" style={{
             transform: idx === 0 ? 'scale(1.03)' : 'none', 
             background: idx === 0 ? 'rgba(255,255,255,0.02)' : 'var(--bg-card)',
             borderLeft: idx === 0 ? '4px solid #fff' : (idx === 1 ? '4px solid #aaa' : (idx === 2 ? '4px solid #666' : '1px solid var(--border)')),

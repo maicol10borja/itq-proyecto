@@ -172,6 +172,35 @@ input:focus, select:focus {
   font-size: 13px;
 }
 
+/* Helper Responsivo */
+.page-padding {
+  padding: 40px;
+}
+.responsive-card {
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .page-padding {
+    padding: 16px !important;
+  }
+  .responsive-card {
+    flex-direction: column !important;
+    padding: 16px !important;
+    text-align: center !important;
+    gap: 16px !important;
+  }
+  .responsive-card > div {
+    margin-left: 0 !important;
+    text-align: center !important;
+  }
+  .responsive-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 /* ========================================================
    RESPONSIVO / MOBILE LAYOUT
 ======================================================== */

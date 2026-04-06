@@ -20,8 +20,8 @@ export default function ObrasPage() {
   }
 
   return (
-    <div style={{ padding:40 }} className="animate-fade">
-      <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-end', marginBottom:32 }}>
+    <div className="animate-fade page-padding">
+      <div className="responsive-card" style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-end', marginBottom:32, padding:0 }}>
         <div>
           <h1 className="serif" style={{ fontSize:32, color:'#fff', marginBottom:8 }}>Auditoría de Obras</h1>
           <p style={{ color:'#888', fontSize:14 }}>Gestión técnica del repositorio literario</p>
@@ -35,7 +35,7 @@ export default function ObrasPage() {
         </div>
       </div>
 
-      <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(320px, 1fr))', gap:24 }}>
+      <div className="responsive-grid" style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(320px, 1fr))', gap:24 }}>
         {obras.map(o => (
           <div key={o.idObra} className="card" style={{ display:'flex', flexDirection:'column' }}>
             <div style={{ padding:24, flex:1 }}>

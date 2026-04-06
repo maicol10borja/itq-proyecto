@@ -17,7 +17,7 @@ export default function Dashboard() {
   const sinStock = obras.filter(o => o.stock === 0)
 
   return (
-    <div style={{ padding: 40 }} className="animate-fade">
+    <div className="animate-fade page-padding">
       <div style={{ marginBottom: 32 }}>
         <h1 className="serif" style={{ fontSize: 32, color: '#fff', marginBottom: 8 }}>General</h1>
         <p style={{ color: '#888', fontSize: 14 }}>Instituto Superior Tecnológico Quito — Control Global</p>
@@ -38,7 +38,7 @@ export default function Dashboard() {
         ))}
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: 32 }}>
+      <div className="responsive-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: 32 }}>
         <div className="card" style={{ padding: 0 }}>
           <div style={{ padding: '20px 24px', borderBottom: '1px solid #222', background: '#111' }}>
             <h3 className="serif" style={{ fontSize: 18, color: '#fff' }}>Catálogo Reciente</h3>
