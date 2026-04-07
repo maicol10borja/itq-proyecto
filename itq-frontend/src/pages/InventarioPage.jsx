@@ -15,6 +15,13 @@ export default function InventarioPage() {
     cargarDatos()
   }, [])
 
+  useEffect(() => {
+    if (tab === 'venta' && form.idObra) {
+      const o = obras.find(x => x.idObra == form.idObra)
+      if (o) setForm(prev => ({ ...prev, monto: (parseFloat(o.precio || 0) * 1.3).toFixed(2) }))
+    }
+  }, [tab, form.idObra, obras])
+
   const cargarDatos = () => {
     obraService.listar().then(r => setObras(r.data))
     inventarioService.transacciones().then(r => setTransacciones(r.data))
@@ -25,10 +32,10 @@ export default function InventarioPage() {
     setMsg('')
     try {
       if(tab === 'compra') {
-        await inventarioService.registrarCompra(form.idObra, user.idUsuario, form.cantidad, form.monto)
+        await inventarioService.registrarCompra(form.idObra, user.id || user.idUsuario, form.cantidad, form.monto)
         setMsg('Compra registrada ✓ Stock actualizado en bodega.')
       } else {
-        await inventarioService.registrarVenta(form.idObra, user.idUsuario, form.cantidad, form.monto)
+        await inventarioService.registrarVenta(form.idObra, user.id || user.idUsuario, form.cantidad, form.monto)
         setMsg('Venta registrada ✓ Stock deducido correctamente.')
       }
       cargarDatos()
@@ -68,8 +75,8 @@ export default function InventarioPage() {
                   <input className="styled-input" type="number" min="1" value={form.cantidad} onChange={e=>setForm({...form, cantidad:e.target.value})} required />
                 </div>
                 <div>
-                  <label className="styled-label">{tab === 'compra' ? 'Costo de Adquisición' : 'Cobro Cliente'}</label>
-                  <input className="styled-input" type="number" step="0.01" value={form.monto} onChange={e=>setForm({...form, monto:e.target.value})} required />
+                  <label className="styled-label">{tab === 'compra' ? 'Costo de Adquisición' : 'Cobro Cliente (Autocalculado)'}</label>
+                  <input className="styled-input" type="number" step="0.01" value={form.monto} onChange={e=>setForm({...form, monto:e.target.value})} disabled={tab === 'venta'} required />
                 </div>
               </div>
               
