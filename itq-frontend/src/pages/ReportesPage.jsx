@@ -103,8 +103,8 @@ export default function ReportesPage() {
                   <td style={{ padding:12 }}>Registro #{t.obra?.idObra || t.idObra || '?'}</td>
                   <td style={{ padding:12 }}><span className={`badge ${t.tipo==='Venta'?'success':'warning'}`}>{t.tipo}</span></td>
                   <td style={{ padding:12 }}>{t.cantidad}</td>
-                  <td style={{ padding:12 }}>${parseFloat(t.costoUnitario).toFixed(2)}</td>
-                  <td style={{ padding:12 }}>${parseFloat(t.costoTotal).toFixed(2)}</td>
+                  <td style={{ padding:12 }}>${parseFloat(t.precioUnitario || 0).toFixed(2)}</td>
+                  <td style={{ padding:12 }}>${parseFloat((t.precioUnitario || 0) * t.cantidad).toFixed(2)}</td>
                 </tr>
               ))}
             </tbody>
